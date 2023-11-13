@@ -10,7 +10,7 @@ function Button({
   if (href)
     return (
       <Link
-        className="flex flex-row items-center justify-center gap-x-2 bg-white px-4 py-1 text-veryDarkBlue2 shadow-md dark:bg-darkBlue dark:text-white"
+        className="flex flex-row items-center justify-center gap-x-2 rounded bg-white px-4 py-1 text-veryDarkBlue2 shadow-md dark:bg-darkBlue dark:text-white"
         href={href}
       >
         {children}
@@ -18,7 +18,7 @@ function Button({
     );
 
   return (
-    <button className="flex flex-row items-center justify-center gap-x-2 bg-white px-4 py-1 text-veryDarkBlue2 shadow-md dark:bg-darkBlue dark:text-white">
+    <button className="flex flex-row items-center justify-center gap-x-2 rounded bg-white px-4 py-1 text-veryDarkBlue2 shadow-md dark:bg-darkBlue dark:text-white">
       {children}
     </button>
   );
