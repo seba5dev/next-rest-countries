@@ -17,11 +17,11 @@ const config: Config = {
     },
     extend: {
       colors: {
-        darkBlue: "#2b3945", // Dark Mode Elements
-        veryDarkBlue1: "#202c37", // Dark Mode Background
-        veryDarkBlue2: "#111517", // Light Mode Text
-        darkGray: "#858585", // Light Mode Input
-        veryLightGray: "#fafafa", // Light Mode Background
+        darkBlue: "hsl(209, 23%, 22%)", // Dark Mode Elements
+        veryDarkBlue1: "hsl(207, 26%, 17%)", // Dark Mode Background
+        veryDarkBlue2: "hsl(200, 15%, 8%)", // Light Mode Text
+        darkGray: "hsl(0, 0%, 52%)", // Light Mode Input
+        veryLightGray: "hsl(0, 0%, 98%)", // Light Mode Background
       },
       fontSize: {
         home: "14px",
