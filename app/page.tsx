@@ -57,19 +57,19 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <div className="mt-14 flex flex-col justify-between gap-y-2 px-5 md:container md:mx-auto md:flex-row md:px-0">
-        <div className="flex w-1/3 items-center rounded-md bg-white pl-6 text-darkGray shadow-md dark:bg-darkBlue dark:text-white">
+      <div className="mt-8 flex flex-col justify-between gap-y-10 px-5 md:container md:mx-auto md:mt-14 md:flex-row md:gap-y-2 md:px-0">
+        <div className="flex w-full items-center rounded-md bg-white pl-6 text-darkGray shadow-md dark:bg-darkBlue dark:text-white md:w-1/3">
           <FaSearch />
           <input
             type="text"
             id="search"
             placeholder="Search for a country..."
-            className="w-full bg-white p-5 placeholder:text-darkGray dark:placeholder:text-white dark:bg-darkBlue dark:text-white"
+            className="w-full rounded-md bg-white p-5 placeholder:text-darkGray dark:bg-darkBlue dark:text-white dark:placeholder:text-white"
             onChange={handleSearchChange}
           />
         </div>
         <select
-          className="rounded-md bg-white p-5 shadow-md dark:bg-darkBlue dark:text-white"
+          className="rounded-md bg-white p-5 shadow-md dark:bg-darkBlue dark:text-white w-60"
           onChange={handleRegionChange}
         >
           <option value="">Filter by Region</option>
@@ -80,7 +80,7 @@ const Home: React.FC = () => {
           ))}
         </select>
       </div>
-      <div className="my-14 grid grid-cols-1 gap-14 px-5 md:container md:mx-auto md:grid-cols-3 md:px-0 xl:grid-cols-4">
+      <div className="mt-8 grid grid-cols-1 gap-14 px-12 md:container md:mx-auto md:my-14 md:grid-cols-3 md:px-0 xl:grid-cols-4">
         {countries && filteredCountries
           ? filteredCountries.map((country: Country) => (
               <Card
