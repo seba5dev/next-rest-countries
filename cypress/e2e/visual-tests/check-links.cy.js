@@ -9,16 +9,16 @@ describe("test visuals and links", () => {
     cy.get("nav button").should("have.text", "Dark Mode");
   });
 
-  it("should check if the dark mode toggle works (suposes light is default)", () => {
-    cy.get("nav button").click();
-    cy.get("html").should("have.class", "dark");
-  });
-
-  // Commented out because the github action runner is in light mode
-  // it("should check if the dark mode toggle works (suposes dark is default)", () => {
+  // Commented out because the github action runner is in dark mode
+  // it("should check if the dark mode toggle works (suposes light is default)", () => {
   //   cy.get("nav button").click();
-  //   cy.get("html").should("have.class", "light");
+  //   cy.get("html").should("have.class", "dark");
   // });
+
+  it("should check if the dark mode toggle works (suposes dark is default)", () => {
+    cy.get("nav button").click();
+    cy.get("html").should("have.class", "light");
+  });
 
   it("should check if the search bar is visible", () => {
     cy.get("input").should("be.visible");
