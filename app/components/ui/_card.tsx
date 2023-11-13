@@ -1,41 +1,39 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Country } from "@/app/types/types";
+import { addThousands } from "@/app/utils/utils";
 
-interface CardProps {
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-  flag: string;
-}
-
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<Country> = ({
   name,
   population,
   region,
   capital,
-  flag,
+  flags,
+  cca2,
 }) => {
   return (
-    <div
-      className="rounded bg-white shadow-md dark:bg-darkBlue dark:text-white"
-    >
+    <div className="rounded bg-white text-sm shadow-md dark:bg-darkBlue dark:text-white">
       <div className="relative h-40 w-full">
-        <Image
-          src={flag}
-          alt={`Flag of ${name}`}
-          fill
-          objectFit="cover"
-          className="rounded-t cursor-pointer"
-          onClick={()=>{
-            window.location.href = `/country/${name}`
-          }}
-        />
+        <Link href={`/country/${cca2}`}>
+          <Image
+            src={flags.svg}
+            alt={flags.alt}
+            fill
+            objectFit="cover"
+            className="cursor-pointer rounded-t"
+          />
+        </Link>
       </div>
       <div className="flex flex-col gap-y-2 p-5">
-        <h3 className="mb-2 text-xl font-bold cursor-pointer">{name}</h3>
+        <Link
+          href={`/country/${cca2}`}
+          className="mb-2 cursor-pointer text-xl font-bold"
+        >
+          {name.common}
+        </Link>
         <h4>
           <span className="font-medium">Population: </span>
-          {population}
+          {addThousands(population)}
         </h4>
         <h4>
           <span className="font-medium">Region: </span>
