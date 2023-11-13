@@ -49,7 +49,14 @@ const Home: React.FC = () => {
   }, [filterCountries]);
 
   if (isLoading) return <Loading />;
-  if (isError) return <div>Error</div>;
+  if (isError)
+    return (
+      <div className="text-center text-2xl font-bold text-darkGray dark:text-white">
+        <div className="country-not-found text-center text-2xl font-bold text-darkGray dark:text-white">
+          No countries found
+        </div>
+      </div>
+    );
 
   return (
     <>
@@ -76,7 +83,7 @@ const Home: React.FC = () => {
           ))}
         </select>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-14 px-12 md:container md:mx-auto md:my-14 sm:grid-cols-2 md:grid-cols-3 md:px-0 xl:grid-cols-4">
+      <div className="mt-8 grid grid-cols-1 gap-14 px-12 md:container sm:grid-cols-2 md:mx-auto md:my-14 md:grid-cols-3 md:px-0 xl:grid-cols-4">
         {filteredCountries && filteredCountries.length > 0 ? (
           filteredCountries.map((country: Country) => (
             <Card
@@ -90,7 +97,7 @@ const Home: React.FC = () => {
             />
           ))
         ) : filterCountries.length === 0 ? (
-          <div className="text-center text-2xl font-bold text-darkGray dark:text-white">
+          <div className="country-not-found text-center text-2xl font-bold text-darkGray dark:text-white">
             No countries found
           </div>
         ) : countries && countries.length > 0 ? (
@@ -106,7 +113,7 @@ const Home: React.FC = () => {
             />
           ))
         ) : (
-          <div className="text-center text-2xl font-bold text-darkGray dark:text-white">
+          <div className="country-not-found text-center text-2xl font-bold text-darkGray dark:text-white">
             No countries found
           </div>
         )}
