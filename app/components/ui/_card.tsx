@@ -12,7 +12,7 @@ const Card: React.FC<Country> = ({
   cca2,
 }) => {
   return (
-    <div className="rounded bg-white text-sm shadow-md dark:bg-darkBlue dark:text-white">
+    <div className="rounded bg-white text-sm shadow-md dark:bg-darkBlue dark:text-white pb-5">
       <div className="relative h-40 w-full">
         <Link href={`/country/${cca2}`}>
           <Image
@@ -24,7 +24,7 @@ const Card: React.FC<Country> = ({
           />
         </Link>
       </div>
-      <div className="flex flex-col gap-y-2 p-5">
+      <div className="flex flex-col gap-y-2 p-5 font-normal">
         <Link
           href={`/country/${cca2}`}
           className="mb-2 cursor-pointer text-xl font-bold"
