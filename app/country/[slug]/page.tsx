@@ -19,7 +19,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
         <div className="flex flex-col px-5 py-12 text-base md:container md:mx-auto md:px-0">
           <div className="grid grid-cols-3 lg:grid-cols-8">
             <Button href="/">
-              <FaArrowLeft />
+              <FaArrowLeft/>
               Back
             </Button>
           </div>
