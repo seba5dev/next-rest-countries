@@ -25,8 +25,8 @@ describe("test errors on country details page", () => {
       {
         statusCode: 500,
       },
-      );
-      cy.visit("http://localhost:3000/country/CO");
+    );
+    cy.visit("http://localhost:3000/country/CO");
     cy.get(".country-not-found").should("include.text", "Country not found");
   });
 });
