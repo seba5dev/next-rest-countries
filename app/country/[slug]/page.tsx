@@ -23,7 +23,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
               Back
             </Button>
           </div>
-          <div className="my-10 text-center text-2xl font-bold text-darkGray dark:text-white">
+          <div className="my-10 text-center text-2xl font-bold text-darkGray dark:text-white country-not-found">
             Country not found
           </div>
         </div>
@@ -112,7 +112,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
             </div>
           </div>
         ) : (
-          <div>Country not found</div>
+          <div className="country-not-found">Country not found</div>
         )}
       </div>
     </>
