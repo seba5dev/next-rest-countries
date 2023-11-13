@@ -11,7 +11,10 @@ const ThemeSwitch: React.FC = () => {
   };
 
   return (
-    <button className="flex items-center gap-x-2 font-medium" onClick={toggleTheme}>
+    <button
+      className="flex items-center gap-x-2 font-medium"
+      onClick={toggleTheme}
+    >
       {theme === "light" ? <FaRegMoon /> : <FaMoon />}
       Dark Mode
     </button>

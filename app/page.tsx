@@ -69,7 +69,7 @@ const Home: React.FC = () => {
           />
         </div>
         <select
-          className="rounded-md bg-white p-5 shadow-md dark:bg-darkBlue dark:text-white w-60"
+          className="w-60 rounded-md bg-white p-5 shadow-md dark:bg-darkBlue dark:text-white"
           onChange={handleRegionChange}
         >
           <option value="">Filter by Region</option>

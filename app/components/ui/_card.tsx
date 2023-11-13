@@ -12,7 +12,7 @@ const Card: React.FC<Country> = ({
   cca2,
 }) => {
   return (
-    <div className="rounded bg-white text-sm shadow-md dark:bg-darkBlue dark:text-white pb-5">
+    <div className="rounded bg-white pb-5 text-sm shadow-md dark:bg-darkBlue dark:text-white">
       <div className="relative h-40 w-full">
         <Link href={`/country/${cca2}`}>
           <Image

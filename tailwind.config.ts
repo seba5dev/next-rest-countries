@@ -27,7 +27,7 @@ const config: Config = {
         home: "14px",
         details: "16px",
       },
-    }
+    },
   },
   plugins: [],
 };
