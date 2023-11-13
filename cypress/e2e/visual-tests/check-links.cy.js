@@ -10,13 +10,19 @@ describe("test visuals and links", () => {
   });
 
   it("should check if the dark mode toggle works", () => {
-    if (cy.get("html").should("have.class", "dark")) {
-      cy.get("nav button").click();
-      cy.get("html").should("have.class", "light");
-    } else {
-      cy.get("nav button").click();
-      cy.get("html").should("have.class", "dark");
-    }
+    cy.get("html")
+      .should("have.class", "dark")
+      .then(($html) => {
+        const isDarkModeEnabled = $html.hasClass("dark");
+
+        cy.get("nav button").click();
+
+        if (isDarkModeEnabled) {
+          cy.get("html").should("have.class", "light");
+        } else {
+          cy.get("html").should("have.class", "dark");
+        }
+      });
   });
 
   it("should check if the search bar is visible", () => {
