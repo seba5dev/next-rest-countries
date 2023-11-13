@@ -5,3 +5,6 @@ export const fetcher: FetcherFunction = async (...args) => {
   return res.json();
 };
 
+export const addThousands = (num: number) => {
+  return num.toLocaleString();
+};
