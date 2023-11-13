@@ -1,6 +1,6 @@
 import useSWR, { SWRResponse } from "swr";
-import { fetcher } from "../utils/utils";
-import { Country } from "../types/types";
+import { fetcher } from "../../utils/utils";
+import { Country } from "../../types/types";
 
 function useCountries(): {
   countries: Country[] | undefined;
