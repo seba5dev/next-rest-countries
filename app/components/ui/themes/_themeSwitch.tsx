@@ -1,7 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { FaRegMoon, FaRegSun } from "react-icons/fa";
+import { FaMoon, FaRegMoon, FaRegSun } from "react-icons/fa";
 
 const ThemeSwitch: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -12,17 +12,8 @@ const ThemeSwitch: React.FC = () => {
 
   return (
     <button className="flex items-center gap-x-2" onClick={toggleTheme}>
-      {theme === "light" ? (
-        <>
-          <FaRegSun />
-          Light Mode
-        </>
-      ) : (
-        <>
-          <FaRegMoon />
-          Dark Mode
-        </>
-      )}
+      {theme === "light" ? <FaRegMoon /> : <FaMoon />}
+      Dark Mode
     </button>
   );
 };
