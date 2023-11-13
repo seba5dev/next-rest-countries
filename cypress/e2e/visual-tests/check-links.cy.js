@@ -9,14 +9,14 @@ describe("test visuals and links", () => {
     cy.get("nav button").should("have.text", "Dark Mode");
   });
 
-  it("should check if the dark mode toggle works (suposes dark is default)", () => {
-    cy.get("nav button").click();
-    cy.get("html").should("have.class", "light");
-  });
-
-  it("should check if the dark mode toggle works (suposes light is default)", () => {
-    cy.get("nav button").click();
-    cy.get("html").should("have.class", "dark");
+  it("should check if the dark mode toggle works", () => {
+    if (cy.get("html").should("have.class", "dark")) {
+      cy.get("nav button").click();
+      cy.get("html").should("have.class", "light");
+    } else {
+      cy.get("nav button").click();
+      cy.get("html").should("have.class", "dark");
+    }
   });
 
   it("should check if the search bar is visible", () => {
