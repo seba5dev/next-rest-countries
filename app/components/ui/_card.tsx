@@ -13,7 +13,7 @@ const Card: React.FC<Country> = ({
 }) => {
   return (
     <div className="rounded bg-white pb-5 text-sm shadow-md dark:bg-darkBlue dark:text-white">
-      <div className="relative h-40 w-full">
+      <div className="relative h-44 w-full">
         <Link href={`/country/${cca2}`}>
           <Image
             src={flags.svg}

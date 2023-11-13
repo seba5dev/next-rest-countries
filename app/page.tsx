@@ -18,7 +18,6 @@ const Home: React.FC = () => {
   const filterCountries = useCallback(() => {
     let filtered = countries;
 
-    // Filtrar por búsqueda
     if (search) {
       const searchTerm = search.toLowerCase();
       filtered = filtered
@@ -28,7 +27,6 @@ const Home: React.FC = () => {
         : [];
     }
 
-    // Filtrar por región
     if (region) {
       filtered = filtered
         ? filtered.filter((country) => country.region === region)
@@ -38,7 +36,6 @@ const Home: React.FC = () => {
     setFilteredCountries(filtered || []);
   }, [countries, search, region]);
 
-  // Manejar cambios en la búsqueda y la región
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
   };
@@ -47,7 +44,6 @@ const Home: React.FC = () => {
     setRegion(e.target.value);
   };
 
-  // Aplicar filtros cuando cambien la búsqueda o la región
   useEffect(() => {
     filterCountries();
   }, [filterCountries]);
@@ -80,32 +76,40 @@ const Home: React.FC = () => {
           ))}
         </select>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-14 px-12 md:container md:mx-auto md:my-14 md:grid-cols-3 md:px-0 xl:grid-cols-4">
-        {countries && filteredCountries
-          ? filteredCountries.map((country: Country) => (
-              <Card
-                key={country.name.common}
-                name={country.name}
-                flags={country.flags}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-                cca2={country.cca2}
-              />
-            ))
-          : countries && countries.length > 0
-          ? countries.map((country: Country) => (
-              <Card
-                key={country.name.common}
-                name={country.name}
-                flags={country.flags}
-                population={country.population}
-                region={country.region}
-                capital={country.capital}
-                cca2={country.cca2}
-              />
-            ))
-          : null}
+      <div className="mt-8 grid grid-cols-1 gap-14 px-12 md:container md:mx-auto md:my-14 sm:grid-cols-2 md:grid-cols-3 md:px-0 xl:grid-cols-4">
+        {filteredCountries && filteredCountries.length > 0 ? (
+          filteredCountries.map((country: Country) => (
+            <Card
+              key={country.name.common}
+              name={country.name}
+              flags={country.flags}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+              cca2={country.cca2}
+            />
+          ))
+        ) : filterCountries.length === 0 ? (
+          <div className="text-center text-2xl font-bold text-darkGray dark:text-white">
+            No countries found
+          </div>
+        ) : countries && countries.length > 0 ? (
+          countries.map((country: Country) => (
+            <Card
+              key={country.name.common}
+              name={country.name}
+              flags={country.flags}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+              cca2={country.cca2}
+            />
+          ))
+        ) : (
+          <div className="text-center text-2xl font-bold text-darkGray dark:text-white">
+            No countries found
+          </div>
+        )}
       </div>
     </>
   );

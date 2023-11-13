@@ -30,6 +30,8 @@ export interface Country {
     svg: string;
     alt: string;
   };
+  // Status is used to determine if the country is exists or not
+  status?: number;
 }
 
 export interface Countries {
