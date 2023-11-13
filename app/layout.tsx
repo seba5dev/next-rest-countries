@@ -20,15 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-    >
+    <html lang="en">
       <body
         className={`${nunitoSans.className} min-h-screen bg-veryLightGray text-veryDarkBlue2 dark:bg-veryDarkBlue1 dark:text-white`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Navbar />
-          {children}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>
