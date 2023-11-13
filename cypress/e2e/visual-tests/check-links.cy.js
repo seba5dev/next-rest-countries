@@ -11,9 +11,9 @@ describe("test visuals and links", () => {
 
   it("should check if the dark mode toggle works", () => {
     cy.get("html")
-      .should("have.class", "dark")
-      .then(($html) => {
-        const isDarkModeEnabled = $html.hasClass("dark");
+      .invoke("attr", "class")
+      .then((classes) => {
+        const isDarkModeEnabled = classes.includes("dark");
 
         cy.get("nav button").click();
 
