@@ -11,7 +11,7 @@
     "cy:run": "npx cypress run"
   },
   "dependencies": {
-    "next": "14.2.21",
+    "next": "14.2.23",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
